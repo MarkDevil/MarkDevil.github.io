@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>vue项目部署到非根目录步骤.md · Mark&#39;s Studio</title>
+    <title>Vue项目部署到非根目录步骤.md · Mark&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Mark&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">vue项目部署到非根目录步骤.md</a>
+                <a href="#" class="post-name">Vue项目部署到非根目录步骤.md</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            vue项目部署到非根目录步骤.md
+            Vue项目部署到非根目录步骤.md
             <!-- 404 -->
             
         </h1>
@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">198</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">237</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -402,37 +402,21 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <h1 id="vue项目打包配置"><a href="#vue项目打包配置" class="headerlink" title="vue项目打包配置"></a>vue项目打包配置</h1><ul>
-<li><p>路由文件配置 router -&gt; index.js<br><code></code></p>
-<p>const createRouter = () =&gt; new Router({<br> base: ‘/projectA/‘, #项目路径<br> mode: ‘history’,  #路由方式history<br> scrollBehavior: () =&gt; ({ y: 0 }),<br> routes: constantRoutes<br>})<br><code></code> </p>
+<li><p>路由文件配置 router -&gt; index.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const createRouter = () =&gt; new Router(&#123;</span><br><span class="line">  base: &apos;/projectA/&apos;, #项目路径</span><br><span class="line">  mode: &apos;history&apos;,  #路由方式history</span><br><span class="line">  scrollBehavior: () =&gt; (&#123; y: 0 &#125;),</span><br><span class="line">  routes: constantRoutes</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>vue项目配置文件 vue.config.js<br><code></code></p>
-<p>module.exports = {<br> /**</p>
+</ul>
 <ul>
-<li>You will need to set publicPath if you plan to deploy your site under a sub path,</li>
-<li>for example GitHub Pages. If you plan to deploy your site to <a href="https://foo.github.io/bar/" target="_blank" rel="noopener">https://foo.github.io/bar/</a>,</li>
-<li>then publicPath should be set to “/bar/“.</li>
-<li>In most cases please use ‘/‘ !!!</li>
-<li><p>Detail: <a href="https://cli.vuejs.org/config/#publicpath" target="_blank" rel="noopener">https://cli.vuejs.org/config/#publicpath</a><br>*/</p>
-<p>publicPath: ‘/projectA/‘, // 配置NGINX非根目录前缀<br>outputDir: ‘dist/projectA’, // 配置打包文件输出路径<br>assetsDir: ‘static’<br>}<br><code></code></p>
+<li><p>vue项目配置文件 vue.config.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  /**</span><br><span class="line">   * You will need to set publicPath if you plan to deploy your site under a sub path,</span><br><span class="line">   * for example GitHub Pages. If you plan to deploy your site to https://foo.github.io/bar/,</span><br><span class="line">   * then publicPath should be set to &quot;/bar/&quot;.</span><br><span class="line">   * In most cases please use &apos;/&apos; !!!</span><br><span class="line">   * Detail: https://cli.vuejs.org/config/#publicpath</span><br><span class="line">   */</span><br><span class="line">  </span><br><span class="line">    publicPath: &apos;/projectA/&apos;, // 配置NGINX非根目录前缀</span><br><span class="line">    outputDir: &apos;dist/projectA&apos;, // 配置打包文件输出路径</span><br><span class="line">    assetsDir: &apos;static&apos;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-</li>
-<li><p>NGINX配置文件 /etc/nginx/conf.d/xxx.conf<br><code></code></p>
+<h1 id="Nginx配置文件"><a href="#Nginx配置文件" class="headerlink" title="Nginx配置文件"></a>Nginx配置文件</h1><ul>
+<li><p>/etc/nginx/conf.d/xxx.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">location /projectA &#123;</span><br><span class="line">     // 此处的 @router 实际上是引用下面的转发，否则在 Vue 路由刷新时可能会抛出 404</span><br><span class="line">     alias /dist/projectA/;           //配置项目地址使用</span><br><span class="line">     try_files $uri $uri/ @router;</span><br><span class="line">     // 请求指向的首页</span><br><span class="line">     index index.html;</span><br><span class="line"> &#125;</span><br><span class="line"> location @router &#123;</span><br><span class="line">     rewrite ^.*$ /projectA/index.html last; //配置请求路径</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<pre><code>    location /projectA {
-          # 此处的 @router 实际上是引用下面的转发，否则在 Vue 路由刷新时可能会抛出 404
-          alias /dist/projectA/;
-          try_files $uri $uri/ @router;
-          # 请求指向的首页
-          index index.html;
-    }
 
-    location @router {
-          rewrite ^.*$ /projectA/index.html last;
-    }
-``
-</code></pre>
     </article>
     <!-- license  -->
     
@@ -440,7 +424,7 @@ height:50vh;
             <p>原文作者：<a href="https://markdevil.github.io">Mark M</a>
             <p>原文链接：<a href="https://markdevil.github.io/2020/02/27/vue项目部署到非根目录步骤-md/">https://markdevil.github.io/2020/02/27/vue项目部署到非根目录步骤-md/</a>
             <p>发表日期：<a href="https://markdevil.github.io/2020/02/27/vue项目部署到非根目录步骤-md/">February 27th 2020, 5:59:41 pm</a>
-            <p>更新日期：<a href="https://markdevil.github.io/2020/02/27/vue项目部署到非根目录步骤-md/">February 27th 2020, 6:11:53 pm</a>
+            <p>更新日期：<a href="https://markdevil.github.io/2020/02/27/vue项目部署到非根目录步骤-md/">February 27th 2020, 6:30:23 pm</a>
             <p>版权声明：</p>
         </div>
     
@@ -559,7 +543,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vue项目打包配置"><span class="toc-number">1.</span> <span class="toc-text">vue项目打包配置</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vue项目打包配置"><span class="toc-number">1.</span> <span class="toc-text">vue项目打包配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Nginx配置文件"><span class="toc-number">2.</span> <span class="toc-text">Nginx配置文件</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -628,7 +612,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "/2020/02/27/vue项目部署到非根目录步骤-md/" >vue项目部署到非根目录步骤.md</a>
+            <span class="archive-post-date">02/27</span><a class="archive-post-title" href= "/2020/02/27/vue项目部署到非根目录步骤-md/" >Vue项目部署到非根目录步骤.md</a>
         </li>
     
     
@@ -694,6 +678,8 @@ jsonContent:
 </div>
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="前端"><span class="iconfont-archer">&#xe60a;</span>前端</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
