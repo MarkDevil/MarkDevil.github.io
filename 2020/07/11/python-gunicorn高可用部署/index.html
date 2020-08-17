@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Mark&#39;s Studio</title>
+    <title>python-gunicorn高可用部署.md · Mark&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Mark&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">python-gunicorn高可用部署.md</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Mark's Blog.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            python-gunicorn高可用部署.md
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "python">python</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">222</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/07/11</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,171 +399,79 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/11/python-gunicorn高可用部署/" >
-            
-                <span>python-gunicorn高可用部署.md</span>
-        </a>
-        <div class="abstract-content">
-            启动命令
-gunicorn -w 9 -t 10  -k ‘gevent’ -b 127.0.0.1:5000 app:app
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="启动命令"><a href="#启动命令" class="headerlink" title="启动命令"></a>启动命令</h1><blockquote>
+<p>gunicorn -w 9 -t 10  -k ‘gevent’ -b 127.0.0.1:5000 app:app</p>
+</blockquote>
+<h1 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h1><ul>
+<li>-c CONFIG <blockquote>
+<p>Specify a config file in the form $(PATH), file:$(PATH), or python:$(MODULE_NAME)</p>
+</blockquote>
+</li>
+<li>-w <blockquote>
+<p>–workers=WORKERS - The number of worker processes. This number should generally be between 2-4 workers per core in the server. Check the FAQ for ideas on tuning this parameter.</p>
+</blockquote>
+</li>
+<li><p>-t </p>
+<blockquote>
+<p>The number of worker threads for handling requests.Run each worker with the specified number of threads.A positive integer generally in the 2-4 x $(NUM_CORES) range. You’ll want to vary this a bit to find the best for your particular application’s work load.<br>If it is not defined, the default is 1.<br>This setting only affects the Gthread worker type.</p>
+</blockquote>
+</li>
+<li><p>-k </p>
+<blockquote>
+<p>The type of worker process to run. You’ll definitely want to read the production page for the implications of this parameter. You can set this to $(NAME) where $(NAME) is one of sync, eventlet, gevent, tornado, gthread. sync is the default. See the worker_class documentation for more information.</p>
+</blockquote>
+</li>
+<li>-b <blockquote>
+<p>BIND 指定Socket端口</p>
+</blockquote>
+</li>
+<li>-n <blockquote>
+<p>–workers=WORKERS - The number of worker processes. This number should generally be between 2-4 workers per core in the server. Check the FAQ for ideas on tuning this parameter.</p>
+</blockquote>
+</li>
+</ul>
 
-参数说明
--c CONFIG 
-Specify a config file in the form $(PATH), file:$(PATH), or python:$(MODULE_NAME)
-
-
--w 
-–workers=WORKERS - The number of worker processes. This number should generally be between 2-4 workers per core in the server. C...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "python">python</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/27/vue项目部署到非根目录步骤/" >
-            
-                <span>Vue项目部署到非根目录步骤.md</span>
-        </a>
-        <div class="abstract-content">
-            vue项目打包配置
-路由文件配置 router -&gt; index.js
-123456const createRouter = () =&gt; new Router(&#123;  base: &apos;/projectA/&apos;, #项目路径  mode: &apos;history&apos;,  #路由方式history  scrollBehavior: () =&gt; (&#123; y: 0 &#125;),  routes: constantRoutes&#125;)
-
-
-
-vue项目配置文件 vue.config.js
-12345678910111213mo...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://markdevil.github.io">Mark M</a>
+            <p>原文链接：<a href="https://markdevil.github.io/2020/07/11/python-gunicorn高可用部署/">https://markdevil.github.io/2020/07/11/python-gunicorn高可用部署/</a>
+            <p>发表日期：<a href="https://markdevil.github.io/2020/07/11/python-gunicorn高可用部署/">July 11th 2020, 10:59:41 pm</a>
+            <p>更新日期：<a href="https://markdevil.github.io/2020/07/11/python-gunicorn高可用部署/">August 17th 2020, 7:12:16 pm</a>
+            <p>版权声明：</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/17/Java-Rmi-md/" >
-            
-                <span>Java-Rmi.md</span>
-        </a>
-        <div class="abstract-content">
-            Java Remote method invocation实现步骤
-定义远程接口
-实现服务端
-实现客户端
-编译源码文件
-启动Java Rmi注册中心，服务端和客户端代码实例
-Hello.java (Interface)
-123456import java.rmi.Remote;import java.rmi.RemoteException;public interface Hello extends Remote &#123;    String sayHello() throws RemoteException;&#125;
-
-Server.java (服务端实现)
-123456789...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/17</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/30/Selenium-Grid分布式测试/" >
-            
-                <span>Selenium Grid分布式测试</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/30</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/08/22/Maven构建jar包/" >
-            
-                <span>Maven构建jar包</span>
-        </a>
-        <div class="abstract-content">
-            maven构建jar包的步骤：
-执行可执行的class，代码内需要有入口main方法
-通过mvn package来构建jar包
-使用java -jar test.jar来执行jar包
-
-
-包含依赖Jar包maven的pom.xml配置文件:
-
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970    &lt;?xml version=&quot;1.0&quot; encodin...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/22</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/02/27/vue项目部署到非根目录步骤/" title= "Vue项目部署到非根目录步骤.md">
+                    <div class="prevTitle">Vue项目部署到非根目录步骤.md</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -574,6 +543,24 @@ Server.java (服务端实现)
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#启动命令"><span class="toc-number">1.</span> <span class="toc-text">启动命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参数说明"><span class="toc-number">2.</span> <span class="toc-text">参数说明</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -760,6 +747,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

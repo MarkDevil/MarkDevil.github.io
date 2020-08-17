@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Mark&#39;s Studio</title>
+    <title>Vue项目部署到非根目录步骤.md · Mark&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Mark&#39;s Blog.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Vue项目部署到非根目录步骤.md</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Mark's Blog.</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            Vue项目部署到非根目录步骤.md
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">237</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/02/27</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,171 +399,68 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/11/python-gunicorn高可用部署/" >
-            
-                <span>python-gunicorn高可用部署.md</span>
-        </a>
-        <div class="abstract-content">
-            启动命令
-gunicorn -w 9 -t 10  -k ‘gevent’ -b 127.0.0.1:5000 app:app
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="vue项目打包配置"><a href="#vue项目打包配置" class="headerlink" title="vue项目打包配置"></a>vue项目打包配置</h1><ul>
+<li><p>路由文件配置 router -&gt; index.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const createRouter = () =&gt; new Router(&#123;</span><br><span class="line">  base: &apos;/projectA/&apos;, #项目路径</span><br><span class="line">  mode: &apos;history&apos;,  #路由方式history</span><br><span class="line">  scrollBehavior: () =&gt; (&#123; y: 0 &#125;),</span><br><span class="line">  routes: constantRoutes</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>vue项目配置文件 vue.config.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  /**</span><br><span class="line">   * You will need to set publicPath if you plan to deploy your site under a sub path,</span><br><span class="line">   * for example GitHub Pages. If you plan to deploy your site to https://foo.github.io/bar/,</span><br><span class="line">   * then publicPath should be set to &quot;/bar/&quot;.</span><br><span class="line">   * In most cases please use &apos;/&apos; !!!</span><br><span class="line">   * Detail: https://cli.vuejs.org/config/#publicpath</span><br><span class="line">   */</span><br><span class="line">  </span><br><span class="line">    publicPath: &apos;/projectA/&apos;, // 配置NGINX非根目录前缀</span><br><span class="line">    outputDir: &apos;dist/projectA&apos;, // 配置打包文件输出路径</span><br><span class="line">    assetsDir: &apos;static&apos;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="Nginx配置文件"><a href="#Nginx配置文件" class="headerlink" title="Nginx配置文件"></a>Nginx配置文件</h1><ul>
+<li><p>/etc/nginx/conf.d/xxx.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">location /projectA &#123;</span><br><span class="line">     // 此处的 @router 实际上是引用下面的转发，否则在 Vue 路由刷新时可能会抛出 404</span><br><span class="line">     alias /dist/projectA/;           //配置项目地址使用</span><br><span class="line">     try_files $uri $uri/ @router;</span><br><span class="line">     // 请求指向的首页</span><br><span class="line">     index index.html;</span><br><span class="line"> &#125;</span><br><span class="line"> location @router &#123;</span><br><span class="line">     rewrite ^.*$ /projectA/index.html last; //配置请求路径</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
-参数说明
--c CONFIG 
-Specify a config file in the form $(PATH), file:$(PATH), or python:$(MODULE_NAME)
-
-
--w 
-–workers=WORKERS - The number of worker processes. This number should generally be between 2-4 workers per core in the server. C...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "python">python</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/27/vue项目部署到非根目录步骤/" >
-            
-                <span>Vue项目部署到非根目录步骤.md</span>
-        </a>
-        <div class="abstract-content">
-            vue项目打包配置
-路由文件配置 router -&gt; index.js
-123456const createRouter = () =&gt; new Router(&#123;  base: &apos;/projectA/&apos;, #项目路径  mode: &apos;history&apos;,  #路由方式history  scrollBehavior: () =&gt; (&#123; y: 0 &#125;),  routes: constantRoutes&#125;)
-
-
-
-vue项目配置文件 vue.config.js
-12345678910111213mo...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://markdevil.github.io">Mark M</a>
+            <p>原文链接：<a href="https://markdevil.github.io/2020/02/27/vue项目部署到非根目录步骤/">https://markdevil.github.io/2020/02/27/vue项目部署到非根目录步骤/</a>
+            <p>发表日期：<a href="https://markdevil.github.io/2020/02/27/vue项目部署到非根目录步骤/">February 27th 2020, 5:59:41 pm</a>
+            <p>更新日期：<a href="https://markdevil.github.io/2020/02/27/vue项目部署到非根目录步骤/">August 17th 2020, 7:03:12 pm</a>
+            <p>版权声明：</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/12/17/Java-Rmi-md/" >
-            
-                <span>Java-Rmi.md</span>
-        </a>
-        <div class="abstract-content">
-            Java Remote method invocation实现步骤
-定义远程接口
-实现服务端
-实现客户端
-编译源码文件
-启动Java Rmi注册中心，服务端和客户端代码实例
-Hello.java (Interface)
-123456import java.rmi.Remote;import java.rmi.RemoteException;public interface Hello extends Remote &#123;    String sayHello() throws RemoteException;&#125;
-
-Server.java (服务端实现)
-123456789...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/17</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/30/Selenium-Grid分布式测试/" >
-            
-                <span>Selenium Grid分布式测试</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/30</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/08/22/Maven构建jar包/" >
-            
-                <span>Maven构建jar包</span>
-        </a>
-        <div class="abstract-content">
-            maven构建jar包的步骤：
-执行可执行的class，代码内需要有入口main方法
-通过mvn package来构建jar包
-使用java -jar test.jar来执行jar包
-
-
-包含依赖Jar包maven的pom.xml配置文件:
-
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970    &lt;?xml version=&quot;1.0&quot; encodin...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/22</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2020/07/11/python-gunicorn高可用部署/" title= "python-gunicorn高可用部署.md">
+                    <div class="nextTitle">python-gunicorn高可用部署.md</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/12/17/Java-Rmi-md/" title= "Java-Rmi.md">
+                    <div class="prevTitle">Java-Rmi.md</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -574,6 +532,24 @@ Server.java (服务端实现)
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vue项目打包配置"><span class="toc-number">1.</span> <span class="toc-text">vue项目打包配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Nginx配置文件"><span class="toc-number">2.</span> <span class="toc-text">Nginx配置文件</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -760,6 +736,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
