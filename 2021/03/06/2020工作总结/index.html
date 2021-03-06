@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Maven构建jar包 · Mark&#39;s Studio</title>
+    <title>2020工作总结 · Mark&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Mark&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Maven构建jar包</a>
+                <a href="#" class="post-name">2020工作总结</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Maven构建jar包
+            2020工作总结
             <!-- 404 -->
             
         </h1>
@@ -266,12 +266,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">454</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.5k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/08/22</span>
+                    <span class="post-intro-time">2021/03/06</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,34 +395,175 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="maven构建jar包的步骤："><a href="#maven构建jar包的步骤：" class="headerlink" title="maven构建jar包的步骤："></a>maven构建jar包的步骤：</h1><ol>
-<li>执行可执行的class，代码内需要有入口main方法</li>
-<li>通过mvn package来构建jar包</li>
-<li>使用java -jar test.jar来执行jar包</li>
+        <h1 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h1><ul>
+<li>你好，我叫Mark，最近三年的工作经历</li>
+<li>比特大陆，负责矿机商城项目的自动化体系建设，包括从0-1建立了接口自动化测试框架，实现了单接口参数校验和业务主流程自动化校验的能力。</li>
+<li>目前在VIPkid支持用户增长，用户中心，课系统以及在线教室音视频这四个业务线的测试工作，涵盖了用户拉新，用户注册/登录，约课，上课全业务场景。组内目前有7个正式，3个外包同学。工作内容包括：项目人力分配，项目风险评估与进度把控，业务项目提效，技术项目开发。<br>  在这期间，通过技术手段解决了团队里面top问题：<ol>
+<li>针对用户增长线上bug多，服务不稳定<ul>
+<li>线上bug多，加入</li>
+</ul>
+</li>
+<li>服务调用链路长，测试无法直观知道服务变更的影响面<ul>
+<li>开发上下游链路系统</li>
+<li>引入上下游自动化</li>
+<li>添加QA流程确认与周知机制</li>
+</ul>
+</li>
+<li>音视频服务线上容量无法快速评估，压测准备时间长<ul>
+<li>开发音视频推拉流工具</li>
+<li>与运维系统集成，实现了压力机申请，脚本准备，压力执行的一键压测能力，压测流程从原来的天级到小时级</li>
+</ul>
+</li>
+<li>针对工单分配不准问题<ul>
+<li>开发日志聚合平台，追踪用户轨迹</li>
+<li>配置业务规则，将工单日志自动分发给指定人</li>
+<li></li>
+</ul>
+</li>
 </ol>
-<ul>
-<li>包含依赖Jar包<br>maven的pom.xml配置文件:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">    &lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;</span><br><span class="line">         xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><br><span class="line">         xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;com.xxx.delon&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;bugly&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">　　　　&lt;!-- 工程所需jar包引用开始 --&gt;</span><br><span class="line">        &lt;!-- 单元测试 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;4.7&lt;/version&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 代码所需依赖 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.squareup.okhttp3&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;okhttp&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;3.3.0&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- 代码所需依赖 --&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.2.2&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;!-- 工程所需jar包引用开始 --&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;build&gt;</span><br><span class="line">        &lt;plugins&gt;</span><br><span class="line"></span><br><span class="line">            &lt;plugin&gt;</span><br><span class="line">                &lt;artifactId&gt;maven-assembly-plugin&lt;/artifactId&gt;</span><br><span class="line">                &lt;configuration&gt;</span><br><span class="line">                    &lt;appendAssemblyId&gt;false&lt;/appendAssemblyId&gt;</span><br><span class="line">                    &lt;descriptorRefs&gt;</span><br><span class="line">                        &lt;descriptorRef&gt;jar-with-dependencies&lt;/descriptorRef&gt;</span><br><span class="line">                    &lt;/descriptorRefs&gt;</span><br><span class="line">                    &lt;archive&gt;</span><br><span class="line">                        &lt;manifest&gt;</span><br><span class="line">                            &lt;!-- 此处指定main方法入口的class --&gt;</span><br><span class="line">                            &lt;mainClass&gt;com.xxx.uploadFile&lt;/mainClass&gt;</span><br><span class="line">                        &lt;/manifest&gt;</span><br><span class="line">                    &lt;/archive&gt;</span><br><span class="line">               ta &lt;/configuration&gt;</span><br><span class="line">                &lt;executions&gt;</span><br><span class="line">                    &lt;execution&gt;</span><br><span class="line">                        &lt;id&gt;make-assembly&lt;/id&gt;</span><br><span class="line">                        &lt;phase&gt;package&lt;/phase&gt;</span><br><span class="line">                        &lt;goals&gt;</span><br><span class="line">                            &lt;goal&gt;assembly&lt;/goal&gt;</span><br><span class="line">                        &lt;/goals&gt;</span><br><span class="line">                    &lt;/execution&gt;</span><br><span class="line">                &lt;/executions&gt;</span><br><span class="line">            &lt;/plugin&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/plugins&gt;</span><br><span class="line">    &lt;/build&gt;</span><br><span class="line"></span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>执行命令打包<blockquote>
-<p>mvn package | mvn assembly:assembly</p>
-</blockquote>
-</li>
-<li>运行jar包<blockquote>
-<p>java -jar java -jar test.jar</p>
-</blockquote>
 </li>
 </ul>
+<p>具体能力：</p>
+<ol>
+<li><p>问题定位<br> 正确的思路+丰富的业务知识+丰富的技术背景知识+较好的调试和开发能力= 强大的bug定位能力Bug定位的过程是能力提升的过程<br>Bug定位的过程也是境界提升的过程</p>
+<ul>
+<li>业务问题定位<ul>
+<li>熟悉产品原型与需求文档</li>
+<li>分析产品的数据流</li>
+</ul>
+</li>
+<li>系统问题定位<ul>
+<li>后端问题：<ul>
+<li>数据流相关<ul>
+<li>上下游是否调通</li>
+<li>模块数据发送是否正常</li>
+<li>模块间接口-协议一致性，加解密</li>
+<li>数据字段是否复用</li>
+</ul>
+</li>
+<li>处理逻辑<ul>
+<li>资源使用</li>
+<li>程序配置</li>
+<li>数据边界</li>
+</ul>
+</li>
+<li>系统和环境<ul>
+<li>系统资源 - cpu,io,句柄</li>
+<li>环境资源 - 程序版本，内核版本</li>
+</ul>
+</li>
+<li>程序代码相关<br>  -获取程序和系统信息——Strace查看系统调用，系统状态获取（ps，top，/proc/pid/*，vmstat，netstat）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>项目把控</p>
+<ul>
+<li>需求阶段<ul>
+<li>积极沟通，明确需求 </li>
+<li>抛出问题，积极解决</li>
+</ul>
+</li>
+<li>技术方案<ul>
+<li>考虑架构，系统交互，数据库表（表结构、字段、索引）字段设计，可拓展性</li>
+</ul>
+</li>
+<li>测试阶段<ul>
+<li>先行接口测试</li>
+<li>重视数据库测试</li>
+</ul>
+</li>
+<li>验收<ul>
+<li>业务方pre环境验收 </li>
+</ul>
+</li>
+<li>上线<ul>
+<li>线上业务逻辑监控，依赖于开发打点</li>
+<li>线上接口拨测</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>质量运营<ul>
+<li>提测阶段把控<ul>
+<li>进入市场团队之后，通过什么手段解决了质量：<ul>
+<li>QA做的内容： <ul>
+<li>确定问题与方向<ul>
+<li>缺陷的数量、缺陷的严重程度、缺陷的生成原因</li>
+</ul>
+</li>
+<li>需求分级</li>
+<li>线上业务告警监控</li>
+</ul>
+</li>
+<li>推动开发做的：<ul>
+<li>分享流程组件化，规范参数以及功能</li>
+<li>线上核心流程的业务埋点</li>
+<li>非业务改动类需求，绿色通道自测上线</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>质量数据<ul>
+<li>Sonar关注千行代码严重问题数</li>
+<li>jacoco增量代码覆盖率与全量代码覆盖率</li>
+<li>冒烟用例的通过率</li>
+<li>提测打回次数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>系统架构理解<ul>
+<li><img src="https://www.processon.com/diagraming/6042e99de401fd594053c30f" alt="image"></li>
+</ul>
+</li>
+<li>工具/平台建设<ul>
+<li>链路追踪</li>
+<li>数据工厂</li>
+<li>音视频压测工具</li>
+</ul>
+</li>
+<li><p>持续集成CI/持续交付CD</p>
+<ul>
+<li>什么是CI?<blockquote>
+<p>持续集成是一种软件开发实践，希望团队中的成员频繁提交代码到代码仓库，且每次提交都能通过自动化测试进行验证，从而使问题尽早暴露和解决。</p>
+</blockquote>
+</li>
+<li><p>怎么实现持续集成？</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 程序员将代码下载到本地，并在完成修改后提交代码；</span><br><span class="line">2. CI服务器监测代码库，并在有提交时自动触发；</span><br><span class="line">3. CI服务器对代码进行构建，运行单元测试和集成测试；</span><br><span class="line">4. CI服务器发布可部署的artefact用于后续测试，并加上本次构建版本的标签。</span><br><span class="line">5. CI服务器通知团队构建成功或者失败；失败发生时团队需要尽快修复，以免耽搁后续的持续集成过程，因为失败时处于持续集成的暂停阶段。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>什么是CD?</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">持续交付是持续集成的扩展，指的是将通过自动化测试的软件部署到产品环境。持续交付的本质是把每个构建成功的应用更新交付给用户使用。在持续交付的世界里，我们对完成的定义不是测试完成，而是交付到客户手中。这里需要注意的是，CD代表持续交付（Continuous Delivery）而不是持续部署（Continuous Deploy），因为部署也包括部署到测试环境，而持续交付代表的是功能的上线，交付给用户使用。</span><br><span class="line"></span><br><span class="line">持续交付的好处在于快速获取用户反馈；适应市场变化和商业策略的变化。开发团队保证每次提交的修改都是可上线的修改，那么决定何时上线，上线哪部分功能则完全由产品业务团队决定。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何做到持续交付？</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 保证每次提交的修改都是可上线的修改。</span><br><span class="line">2. 完善的测试（包括单元测试，组件测试，验收测试）来测试新功能和进行回归测试；</span><br><span class="line">3. 持续交付的前提条件是自动化的集成和部署；需要开发/测试/运维人员一起完成。</span><br><span class="line">需要ab部署，线上灰度</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>专项</p>
+<ul>
+<li>音视频压测<ul>
+<li>为什么做，有什么收益？</li>
+<li>难点</li>
+<li>怎么实现</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://markdevil.github.io">Mark M</a>
-            <p>原文链接：<a href="https://markdevil.github.io/2018/08/22/Maven构建jar包/">https://markdevil.github.io/2018/08/22/Maven构建jar包/</a>
-            <p>发表日期：<a href="https://markdevil.github.io/2018/08/22/Maven构建jar包/">August 22nd 2018, 6:51:59 pm</a>
-            <p>更新日期：<a href="https://markdevil.github.io/2018/08/22/Maven构建jar包/">February 27th 2020, 10:35:14 am</a>
+            <p>原文链接：<a href="https://markdevil.github.io/2021/03/06/2020工作总结/">https://markdevil.github.io/2021/03/06/2020工作总结/</a>
+            <p>发表日期：<a href="https://markdevil.github.io/2021/03/06/2020工作总结/">March 6th 2021, 12:01:58 pm</a>
+            <p>更新日期：<a href="https://markdevil.github.io/2021/03/06/2020工作总结/">March 6th 2021, 12:28:59 pm</a>
             <p>版权声明：</p>
         </div>
     
@@ -430,13 +571,13 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2018/12/17/Java-Rmi-md/" title= "Java-Rmi.md">
-                    <div class="nextTitle">Java-Rmi.md</div>
-                </a>
-            
         </li>
         <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/07/11/python-gunicorn高可用部署/" title= "python-gunicorn高可用部署.md">
+                    <div class="prevTitle">python-gunicorn高可用部署.md</div>
+                </a>
             
         </li>
     </ul>
@@ -541,7 +682,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#maven构建jar包的步骤："><span class="toc-number">1.</span> <span class="toc-text">maven构建jar包的步骤：</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#自我介绍"><span class="toc-number">1.</span> <span class="toc-text">自我介绍</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
