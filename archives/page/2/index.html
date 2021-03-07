@@ -346,178 +346,27 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/07/测试开发面试题/" >
+        <a class="abstract-title" href = "/2018/12/17/Java-Rmi-md/" >
             
-                <span>测试开发面试题</span>
+                <span>Java-Rmi.md</span>
         </a>
         <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/07</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/07/spring/" >
-            
-                <span>spring</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/07</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/07/jvm/" >
-            
-                <span>jvm</span>
-        </a>
-        <div class="abstract-content">
-            Q.JVM运行内存的分类?A:JVM内存结构：
-堆：
-123456- 程序计数器：当前线程所执行的字节码的行号指示器，用于记录下一条要运行的指令，线程私有注：如果正在执行的是Native方法，计数器值则为空- Java虚拟栈：存放基本数据类型、对象的引用、方法出口等，线程私有- Native方法栈：和虚拟栈相似，只不过它服务于Native方法，线程私有- Java堆：java内存最大的一块，所有对象实例、数组都存放在java堆，GC回收的地方，线程共享- 方法区：存放已被加载的类信息、常量、静态变量、即时编译器编译后的代码数据等。（即永久带），回收目标主要是常量池的回收和类型的卸载，各线...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/07</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/07/java/" >
-            
-                <span>java</span>
-        </a>
-        <div class="abstract-content">
-            Q. java基本数据类型?A:java中一共分为8种基本数据类型：byte、short、int、long、float、double、char、boolean,其中byte、short、int、long是整型。float、double是浮点型,char是字符型,boolean是布尔型。
-Q.引用类型A:java为每种基本类型都提供了对应的封装类型，分别为：Byte、Short、Integer、Long、Float、Double、Character、Boolean。引用类型是一种对象类型,它的值是指向内存空间的引用，就是地址。
-Q.String,StringBuilder和StringBu...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/07</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/07/redis/" >
-            
-                <span>redis</span>
-        </a>
-        <div class="abstract-content">
-            Q.Redis有哪些类型A:Redis支持五种数据类型：string（字符串），hash（哈希），list（列表），set（集合）及zset(sorted set：有序集合)。
-Q.Redis的内部结构A:当我们在本文中提到Redis的“数据结构”，可能是在两个不同的层面来讨论它。
+            Java Remote method invocation实现步骤
+定义远程接口
+实现服务端
+实现客户端
+编译源码文件
+启动Java Rmi注册中心，服务端和客户端代码实例
+Hello.java (Interface)
+123456import java.rmi.Remote;import java.rmi.RemoteException;public interface Hello extends Remote &#123;    String sayHello() throws RemoteException;&#125;
 
-第一个层面，是从使用者的角度，string，list，hash，set，sorted set
-第二个层面，是从内部实现的角度，属于更底层的实现，ht(dict),raw,embstr,intset,sds,ziplist,quicklist,skiplist
-存储效率（memory efficiency）。...
+Server.java (服务端实现)
+123456789...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "redis">redis</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/07/数据库/" >
-            
-                <span>数据库</span>
-        </a>
-        <div class="abstract-content">
-            Q.mysql事务隔离级别以及会出现的问题123456789数据库事务的隔离级别有4个，由低到高依次为Read uncommitted 、Read committed 、Repeatable read 、Serializable ，这四个级别可以逐个解决脏读 、不可重复读 、幻读 这几类问题。√: 可能出现 ×: 不会出现事务隔离级别	脏读	不可重复读	幻读读未提交（read-uncommitted）	√	√	√读已提交（read-committed）	×	√	√可重复读（repeatable-read）	×	×	√串行化（serializable）	×	×	×
-Q.说下左连接和右连接 ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数据库">数据库</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/07/多线程/" >
-            
-                <span>多线程</span>
-        </a>
-        <div class="abstract-content">
-            Q.讲下Java多线程的使用A:1多线程一般用来更好的利用CPU资源，解决诸如程序“在一部分上会阻塞”，“在另一部分上需要持续运行”的场合。多线程一般用来更好的利用CPU资源，解决诸如程序“在一部分上会阻塞”，“在另一部分上需要持续运行”的场合。
-Q.创建线程的方式及实现? A:12345678910111213141. 继承Thread类创建线程类- 定义Thread类的子类，并重写该类的run方法，该run方法的方法体就代表了线程要完成的任务。因此把run()方法称为执行体。- 创建Thread子类的实例，即创建了线程对象。- 调用线程对象的start()方法来启动该线程.2. 通过...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/07</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/12/17</span>
             </div>
             <!-- tags  -->
             
@@ -530,100 +379,27 @@ Q.创建线程的方式及实现? A:12345678910111213141. 继承Thread类创建�
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/06/2020工作总结/" >
+        <a class="abstract-title" href = "/2018/08/22/Maven构建jar包/" >
             
-                <span>2020工作总结</span>
+                <span>Maven构建jar包</span>
         </a>
         <div class="abstract-content">
-            工作总结
-目前在kid支持用户增长（2+3），用户中心（1），课系统（2）以及在线教室音视频（3）这四个业务线的测试工作，涵盖了用户拉新，用户注册/登录，约课，上课音视频等业务场景。带领8个正式员工的测试小组。我的工作内容包括：项目人力分配，项目风险评估与进度把控，业务项目提效，技术项目开发。  在任职期间，解决了业务团队里面top问题：
-针对用户增长线上bug多，服务不稳定，需求多且杂，没有重点
-需求分级
-线上问题归类
-业务流程不清楚，导致未覆盖 -&gt; 梳理业务流程
-前端开发不规范，同一个功能，不同项目不一致 -&gt; 推动开发实现前端功能组件化
-线上问题不能实时发现并召回 -...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/06</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/07/11/python-gunicorn高可用部署/" >
-            
-                <span>python-gunicorn高可用部署.md</span>
-        </a>
-        <div class="abstract-content">
-            启动命令
-gunicorn -w 9 -t 10  -k ‘gevent’ -b 127.0.0.1:5000 app:app
-
-参数说明
--c CONFIG 
-Specify a config file in the form $(PATH), file:$(PATH), or python:$(MODULE_NAME)
+            maven构建jar包的步骤：
+执行可执行的class，代码内需要有入口main方法
+通过mvn package来构建jar包
+使用java -jar test.jar来执行jar包
 
 
--w 
-–workers=WORKERS - The number of worker processes. This number should generally be between 2-4 workers per core in the server. C...
+包含依赖Jar包maven的pom.xml配置文件:
+
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970    &lt;?xml version=&quot;1.0&quot; encodin...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/11</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/22</span>
             </div>
             <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "python">python</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/27/vue项目部署到非根目录步骤/" >
-            
-                <span>Vue项目部署到非根目录步骤.md</span>
-        </a>
-        <div class="abstract-content">
-            vue项目打包配置
-路由文件配置 router -&gt; index.js
-123456const createRouter = () =&gt; new Router(&#123;  base: &apos;/projectA/&apos;, #项目路径  mode: &apos;history&apos;,  #路由方式history  scrollBehavior: () =&gt; (&#123; y: 0 &#125;),  routes: constantRoutes&#125;)
-
-
-
-vue项目配置文件 vue.config.js
-12345678910111213mo...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "vue">vue</a>
-    
-</div>
             
         </div>
     </article>
@@ -631,7 +407,7 @@ vue项目配置文件 vue.config.js
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &#62;</a>
+        <a class="extend prev" rel="prev" href="/archives/">&#60; PREV</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
     </nav>
     
 </main>
