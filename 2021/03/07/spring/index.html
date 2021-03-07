@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.4k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.5k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -407,7 +407,7 @@ height:50vh;
 <p>Q. 开启SpringBoot特性有哪几种方式？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 继承spring-boot-starter-parent项目</span><br><span class="line">2. 导入spring-boot-dependencies项目依赖</span><br></pre></td></tr></table></figure></p>
 <p>Q. SpringBoot需要独立的容器运行吗？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">可以不需要，内置Tomcat/Jetty等容器</span><br></pre></td></tr></table></figure></p>
 <p>Q. 运行SpringBoot有哪几种方式？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 打包用命令或者放到容器中运行</span><br><span class="line">2. 用Maven或者Gradle插件运行</span><br><span class="line">3. 直接执行main方法运行</span><br></pre></td></tr></table></figure></p>
-<p>Q. Spring Boot 自动配置原理是什么？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注解 @EnableAutoConfiguration, @Configuration, @ConditionalOnClass 就是自动配置的核心，首先它得是一个配置文件，其次根据类路径下是否有这个类去自动配置。</span><br></pre></td></tr></table></figure></p>
+<p>Q. Spring Boot 自动配置原理是什么？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Spring Boot的运行是由注解@EnableAutoConfiguration提供的。</span><br><span class="line"></span><br><span class="line">这里的关键功能是@Import注解。EnableAutoConfigurationImportSelector使用SpringFactoriesLoader.loadFactoryNames方法来扫描具有MEAT-INF/spring.factories文件的jar包（1.5版本以前使用EnableAutoConfigurationImportSelector类，1.5以后这个类废弃了使用的是AutoConfigurationImportSelector类），下面是spring-boot-autoconfigure-1.5.4.RELEASE.jar下的MEAT-INF中的spring.factories文件的部分内容。</span><br><span class="line"></span><br><span class="line">里面的类都是自动配置类，SpringBoot会根据这些自动配置类去自动配置环境。</span><br></pre></td></tr></table></figure></p>
 <p>Q. 你如何理解 Spring Boot 中的 Starters？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Starters可以理解为启动器，它包含了一系列可以集成到应用里面的依赖包，你可以一站式集成 Spring 及其他技术，而不需要到处找示例代码和依赖包。如你想使用 Spring JPA 访问数据库，只要加入 spring-boot-starter-data-jpa 启动器依赖就能使用了。</span><br><span class="line"></span><br><span class="line">Starters包含了许多项目中需要用到的依赖，它们能快速持续的运行，都是一系列得到支持的管理传递性依赖。</span><br></pre></td></tr></table></figure></p>
 <p>Q.如何在 Spring Boot 启动的时候运行一些特定的代码？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">可以实现接口 ApplicationRunner 或者 CommandLineRunner，这两个接口实现方式一样，它们都只提供了一个 run 方法，</span><br></pre></td></tr></table></figure></p>
 <p>Q.Spring Boot 有哪几种读取配置的方式？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Spring Boot 可以通过 @PropertySource,@Value,@Environment, @ConfigurationProperties 来绑定变量，</span><br></pre></td></tr></table></figure></p>
@@ -426,7 +426,7 @@ height:50vh;
             <p>原文作者：<a href="https://markdevil.github.io">Mark M</a>
             <p>原文链接：<a href="https://markdevil.github.io/2021/03/07/spring/">https://markdevil.github.io/2021/03/07/spring/</a>
             <p>发表日期：<a href="https://markdevil.github.io/2021/03/07/spring/">March 7th 2021, 9:24:38 pm</a>
-            <p>更新日期：<a href="https://markdevil.github.io/2021/03/07/spring/">March 7th 2021, 9:51:47 pm</a>
+            <p>更新日期：<a href="https://markdevil.github.io/2021/03/07/spring/">March 7th 2021, 9:56:11 pm</a>
             <p>版权声明：</p>
         </div>
     
@@ -687,8 +687,6 @@ top:50vh;
     
     
     
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 12
@@ -712,17 +710,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/07</span><a class="archive-post-title" href= "/2021/03/07/spring/" >spring</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">03/07</span><a class="archive-post-title" href= "/2021/03/07/jvm/" >jvm</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/07</span><a class="archive-post-title" href= "/2021/03/07/redis/" >redis</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span><a class="archive-post-title" href= "/2021/03/07/spring/" >spring</a>
         </li>
     
     
@@ -790,9 +788,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
     
-        <span class="sidebar-tag-name" data-tags="vue"><span class="iconfont-archer">&#xe606;</span>vue</span>
-    
         <span class="sidebar-tag-name" data-tags="redis"><span class="iconfont-archer">&#xe606;</span>redis</span>
+    
+        <span class="sidebar-tag-name" data-tags="vue"><span class="iconfont-archer">&#xe606;</span>vue</span>
     
         <span class="sidebar-tag-name" data-tags="数据库"><span class="iconfont-archer">&#xe606;</span>数据库</span>
     
