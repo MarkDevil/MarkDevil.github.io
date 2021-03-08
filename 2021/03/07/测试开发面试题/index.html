@@ -395,13 +395,7 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <ul>
-<li><ul>
-<li>[toc]</li>
-</ul>
-</li>
-</ul>
-<h1 id="1-测试理论"><a href="#1-测试理论" class="headerlink" title="1. 测试理论"></a>1. 测试理论</h1><p>Q.描述下上个公司的测试流程？<br><br>A:<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 产品tapd提出需求进行需求评审</span><br><span class="line">2. 评审完成后测试进行测试用例编写并与产品，开发确认</span><br><span class="line">3. 开发完成后，开发发邮件提测并提供git代码地址，版本号，以及改动说明</span><br><span class="line">4. 测试按照测试用例进行提测，有问题提到bug平台jira</span><br><span class="line">5. 开发修复完bug后，测试进行验证，验证通过后关闭bug</span><br><span class="line">6. 测试按用例测试完成后，发测试报告抄送相关人员。业务人员进行uat测试</span><br><span class="line">7. uat通过之后，开发人员准备上线脚本，进入上线流程</span><br></pre></td></tr></table></figure></p>
+        <h1 id="1-测试理论"><a href="#1-测试理论" class="headerlink" title="1. 测试理论"></a>1. 测试理论</h1><p>Q.描述下上个公司的测试流程？<br><br>A:<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. 产品tapd提出需求进行需求评审</span><br><span class="line">2. 评审完成后测试进行测试用例编写并与产品，开发确认</span><br><span class="line">3. 开发完成后，开发发邮件提测并提供git代码地址，版本号，以及改动说明</span><br><span class="line">4. 测试按照测试用例进行提测，有问题提到bug平台jira</span><br><span class="line">5. 开发修复完bug后，测试进行验证，验证通过后关闭bug</span><br><span class="line">6. 测试按用例测试完成后，发测试报告抄送相关人员。业务人员进行uat测试</span><br><span class="line">7. uat通过之后，开发人员准备上线脚本，进入上线流程</span><br></pre></td></tr></table></figure></p>
 <p>Q.请描述下bug的几个要素？<br><br>A:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编号，严重级别，现象描述，测试时间，测试版本，测试人</span><br></pre></td></tr></table></figure></p>
 <p>Q.白盒，黑盒，静态测试，动态的区别，你是怎么运用的？<br><br>A：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">白盒测试：白盒测试又称结构测试、逻辑驱动测试或基于程序代码内部结构的测试。此时，需要深入考察程序代码的内部结构、逻辑设计等等。白盒测试需要测试工程师具备很深的软件开发工地，精通相应的开发语言，一般的软件测试工程师难以胜任该工作。</span><br><span class="line"></span><br><span class="line">黑盒测试：黑盒测试又叫功能测试、数据驱动测试或给予需求规格说明书的功能测试。这种测试注重于测试软件的功能性需求。采用这种测试方法，测试工程师把测试对象看作一个黑盒子，不需要考虑程序内部的逻辑结构和特性，只需要依据程序的需求规格说明书，检查程序的功能是否符合它的功能说明。黑盒测试能更好更真实的从用户角度来考察被测系统的功能性需求实现情况。</span><br><span class="line"></span><br><span class="line">静态测试（代码走读或者sonar）：静态测试，顾名思义，就是静态的、不执行被测对象程序代码而寻找缺陷的过程。通俗地讲，静态测试就是用眼睛看，阅读程序代码，文档资料等，与需求规格说明书中的需求进行比较，找出程序代码中设计的不合理，以及文档资料中的错误。</span><br><span class="line"></span><br><span class="line">动态测试：动态测试即为实际的执行被测对象的程序代码，输入事先设计好的测试用例，检查程序代码运行的结果与测试用例中设计的预期结果之间是否差异，判定实际结果与预期结果是否一致，从而检验程序的正确性、可靠性和有效性，并分析系统运行效率和健壮性等性能状况。</span><br><span class="line"></span><br><span class="line">动态测试由四部分组成：设计测试用例、执行测试用例、分析比较输出结果、输出测试报告。</span><br><span class="line">动态测试结合使用白盒测试和黑盒测试。</span><br></pre></td></tr></table></figure></p>
 <p>Q.测试方法有哪些？<br><br>A:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">白盒测试方法：语句覆盖，判断覆盖，条件覆盖，多重条件覆盖</span><br><span class="line">黑盒测试方法：等价类划分，边界值分析，因果图分析，错误猜测</span><br></pre></td></tr></table></figure></p>
@@ -1571,7 +1565,7 @@ a = tmp;
             <p>原文作者：<a href="https://markdevil.github.io">Mark M</a>
             <p>原文链接：<a href="https://markdevil.github.io/2021/03/07/测试开发面试题/">https://markdevil.github.io/2021/03/07/测试开发面试题/</a>
             <p>发表日期：<a href="https://markdevil.github.io/2021/03/07/测试开发面试题/">March 7th 2021, 9:25:22 pm</a>
-            <p>更新日期：<a href="https://markdevil.github.io/2021/03/07/测试开发面试题/">March 7th 2021, 9:32:42 pm</a>
+            <p>更新日期：<a href="https://markdevil.github.io/2021/03/07/测试开发面试题/">March 8th 2021, 10:42:15 am</a>
             <p>版权声明：</p>
         </div>
     
@@ -1827,6 +1821,10 @@ top:50vh;
     
     
     
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 12
@@ -1850,22 +1848,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/07</span><a class="archive-post-title" href= "/2021/03/07/redis/" >redis</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">03/07</span><a class="archive-post-title" href= "/2021/03/07/jvm/" >jvm</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/07</span><a class="archive-post-title" href= "/2021/03/07/spring/" >spring</a>
+            <span class="archive-post-date">03/07</span><a class="archive-post-title" href= "/2021/03/07/redis/" >redis</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">03/07</span><a class="archive-post-title" href= "/2021/03/07/数据库/" >数据库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span><a class="archive-post-title" href= "/2021/03/07/spring/" >spring</a>
         </li>
     
     
@@ -1930,9 +1928,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="redis"><span class="iconfont-archer">&#xe606;</span>redis</span>
     
-        <span class="sidebar-tag-name" data-tags="vue"><span class="iconfont-archer">&#xe606;</span>vue</span>
-    
         <span class="sidebar-tag-name" data-tags="数据库"><span class="iconfont-archer">&#xe606;</span>数据库</span>
+    
+        <span class="sidebar-tag-name" data-tags="vue"><span class="iconfont-archer">&#xe606;</span>vue</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
